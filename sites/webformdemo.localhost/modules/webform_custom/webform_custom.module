@@ -1,0 +1,33 @@
+<?php
+
+// Make changes to the Results menu sub-tabs
+function webform_custom_menu_alter(&$items){
+  // Set Results Table sub-tab as new default sub-tab
+
+  //dsm($items);
+  //krum($items);
+
+  krum($items['node/%webform_menu/webform-results']);
+  $items['node/%webform_menu/webform-results']['page callback'] = 'webform_result_table';
+  $items['node/%webform_menu/webform-results']['page arguments'] = array(1,'50');
+
+/*
+  $items['node/%webform_menu/webform-results'] = array{
+    'page callback' : 'webform_result_table',
+    'page arguments' : array(1,'50')
+  };
+
+  $items['node/%webform_menu/webform-results/table'] = array{
+    'type' : MENU_DEFAULT_LOCAL_TASK,
+    'title': Database,
+    'weight': 4
+  }
+
+  $items['node/%webform_menu/webform-results/submissions']['type'] = MENU_LOCAL_TASK;
+
+  $items['node/%webform_menu/webform-results/download']['weight'] = 5;
+  $items['node/%webform_menu/webform-results/analysis']['weight'] = 6;
+  $items['node/%webform_menu/webform-results/submissions']['weight'] = 7;
+
+*/
+}
